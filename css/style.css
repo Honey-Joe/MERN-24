@@ -1,0 +1,45 @@
+/* button{
+    color: green;
+} */
+
+
+/* selectors 
+
+    1. Universal Selector
+
+    2. Elemental Selector 
+
+    3. Class selector 
+
+    4. Id selector
+
+*/
+
+/* *{
+    color: green;
+}
+
+h1{
+    color: red;
+}
+
+.para{
+    color: blue;
+}
+
+#btn{
+    color: aqua;
+} */
+
+.para{
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 900;
+    font-style:italic;
+    line-height: 70px;
+    text-align: center;
+    text-decoration:line-through dotted;
+    text-transform: capitalize;
+}
+
