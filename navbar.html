@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="max-w-[100%]">
+        <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div class="bg-gray-500 p-4 flex justify-between">
+                <h1>Logo</h1>
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu md:hidden" id="menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x hidden md:hidden" id="close"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </div>
+            </div>
+            <div class="bg-red-500 hidden md:block" id="navitem">
+                <ul class="flex flex-col md:flex-row gap-5 justify-end items-center">
+                    <li class=" p-4"><a href="#">Home</a></li>
+                    <li class=" p-4"><a href="#">About</a></li>
+                    <li class=" p-4"><a href="#">Services</a></li>
+                    <li class=" p-4"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    var navitem = document.getElementById("navitem");
+    var menu = document.getElementById("menu")
+    var closeBtn = document.getElementById("close");
+
+    menu.addEventListener("click" , ()=>{
+        console.log("menu click")
+        console.dir(navitem);
+        navitem.classList.remove("hidden");
+        closeBtn.classList.remove("hidden");
+        menu.classList.add("hidden");
+    })  
+
+    
+
+    closeBtn.addEventListener("click" , ()=>{
+        navitem.classList.add("hidden");
+        menu.classList.remove("hidden")
+        closeBtn.classList.add("hidden");
+    })
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="max-w-[100%] bg-slate-500/20">
+        <div class="w-[90%] mx-auto h-screen flex justify-center items-center">
+            <div class="bg-black/15 p-20 border shadow-lg rounded-2xl space-y-5">
+                <h1 class="text-center text-xl font-bold">Login Form</h1>
+                <form action="" class="flex flex-col gap-5" id="loginForm">
+                    <label for="email">Email</label>
+                    <input type="email" class="px-5 py-2 rounded-lg border" id="email" >
+                    <p id="emailerr" class="text-red-500"></p>
+                    <label for="password">Password</label>
+                    <input type="password" class="px-5 py-2 rounded-lg border" id="password" required>
+                    <p class="text-red-500" id="passerr"></p>
+                    <button type="submit" class="bg-green-500 rounded-lg px-5 py-3 text-white">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    var form = document.getElementById("loginForm")
+    var email = document.getElementById("email")
+    var password = document.getElementById("password")
+    var emailerr = document.getElementById("emailerr")
+    var passerr = document.getElementById("passerr")
+
+    form.addEventListener("submit" , (e)=>{
+        e.preventDefault();
+    
+        advanceValidation(email.value, password.value);
+    })
+
+    const advanceValidation = (email , pass)=>{
+        const  emailregex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/ 
+        if(email.match(emailregex)){
+            console.log("Valid Email");
+            emailerr.textContent = "";
+        }else{
+            emailerr.textContent = "Invalid Email";
+            console.log("Invalid Email");
+        }
+
+        var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/;
+        if(pass.match(passwordRegex)){
+            console.log("Valid Password");
+            passerr.textContent = "";
+        }else{
+            passerr.textContent = "Invalid Password";
+            console.log("Invalid Password");
+        }
+    }
+
+</script>
+</html>
